@@ -70,29 +70,30 @@ const ProductCard: FC<Props> = ({
               variant={product.variants[0]}
             />
           )}
-          {!noNameTag && (
-            <div className={s.header}>
-              <h3 className={s.name}>
-                <span>{product.name}</span>
-              </h3>
-              <div className={s.price}>
-                {`${price} ${product.price?.currencyCode}`}
-              </div>
-            </div>
-          )}
           <div className={s.imageContainer}>
             {product?.images && (
               <Image
                 alt={product.name || 'Product Image'}
                 className={s.productImage}
                 src={product.images[0]?.url || placeholderImg}
-                height={540}
-                width={540}
+                object-cover
+                object-center
                 quality="85"
                 {...imgProps}
               />
             )}
           </div>
+          {!noNameTag && (
+            <div className={s.header}>
+              <h3>
+                <span>{product.name}</span>
+              </h3>
+              <p>{product.description}</p>
+              <div className={s.price}>
+                {`${price} ${product.price?.currencyCode}`}
+              </div>
+            </div>
+          )}
         </>
       )}
 

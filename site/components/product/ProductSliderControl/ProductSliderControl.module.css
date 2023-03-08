@@ -1,12 +1,11 @@
 .control {
-  @apply bg-violet absolute bottom-10 right-10 flex flex-row
-  border-accent-0 border text-accent-0 z-30 shadow-xl select-none;
-  height: 48px;
+  @apply absolute bottom-32 right-4 pl-8 flex flex-row 
+  text-black z-30 w-full justify-between select-none;
 }
 
 .leftControl,
 .rightControl {
-  @apply px-9 cursor-pointer;
+  @apply cursor-pointer shadow-xl bg-white border w-8 h-8 flex justify-center items-center rounded-full border-gray-300;
   transition: background-color 0.2s ease;
 }
 

@@ -10,6 +10,8 @@ import {
   SelectedOptions,
 } from '../helpers'
 import ErrorMessage from '@components/ui/ErrorMessage'
+import ProductTag from '../ProductTag'
+import usePrice from '@framework/product/use-price'
 
 interface ProductSidebarProps {
   product: Product
@@ -50,9 +52,15 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
       }
     }
   }
+  const { price } = usePrice({
+    amount: product.price.value,
+    baseAmount: product.price.retailPrice,
+    currencyCode: product.price.currencyCode!,
+  })
 
   return (
     <div className={className}>
+      <h1 className="text-4xl">{product.name}</h1>
       <ProductOptions
         options={product.options}
         selectedOptions={selectedOptions}
@@ -66,11 +74,12 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
         <Rating value={4} />
         <div className="text-accent-6 pr-1 font-medium text-sm">36 reviews</div>
       </div>
+      <h1 className="text-4xl">{price}</h1>
       <div>
         {error && <ErrorMessage error={error} className="my-5" />}
         {process.env.COMMERCE_CART_ENABLED && (
           <Button
-            aria-label="Add to Cart"
+            aria-label="In den Warenkorb"
             type="button"
             className={s.button}
             onClick={addToCart}
@@ -78,8 +87,8 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
             disabled={variant?.availableForSale === false}
           >
             {variant?.availableForSale === false
-              ? 'Not Available'
-              : 'Add To Cart'}
+              ? 'Nicht verfügbar'
+              : 'In den Warenkorb'}
           </Button>
         )}
       </div>
