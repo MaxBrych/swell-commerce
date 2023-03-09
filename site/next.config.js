@@ -40,6 +40,9 @@ module.exports = withCommerceConfig({
   experimental: {
     esmExternals: 'loose',
   },
+  images: {
+    domains: ['cdn.sanity.io'],
+  },
 })
 
 // Don't delete this console log, useful to see the commerce config in Vercel deployments
