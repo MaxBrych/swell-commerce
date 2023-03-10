@@ -93,7 +93,7 @@ export default function Home({
           headline="Wir kümmern uns um ihre Technik"
           description="Im Müritzphone Shop Röbel, finden Sie alles was Sie für Ihr Smartphone, Tablet oder Notebook benötigen. Wir bieten Ihnen eine große Auswahl an Zubehör, Ersatzteilen und Reparaturen."
         />
-        <Grid layout="A" variant="filled">
+        <Grid layout="B" variant="filled">
           {products.slice(0, 3).map((product: any, i: number) => (
             <ProductCard
               key={product.id}
