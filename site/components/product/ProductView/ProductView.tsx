@@ -69,7 +69,10 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
           <Text variant="sectionHeading">Weitere Produkte</Text>
           <div className={s.relatedProductsGrid}>
             {relatedProducts.map((p) => (
-              <div key={p.path} className="flex-shrink-0">
+              <div
+                key={p.path}
+                className="flex-shrink-0 w-[75vw] md:flex-1 md:w-full md:overflow-hidden"
+              >
                 <ProductCard
                   noNameTag
                   product={p}

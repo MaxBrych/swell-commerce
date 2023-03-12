@@ -23,11 +23,7 @@ const NavbarRoot: FC<{ children?: ReactNode }> = ({ children }) => {
     }
   }, [hasScrolled])
 
-  return (
-    <div className={cn(s.root, { 'shadow-magical': hasScrolled })}>
-      {children}
-    </div>
-  )
+  return <div className={cn(s.root, { 'mt-4': hasScrolled })}>{children}</div>
 }
 
 export default NavbarRoot

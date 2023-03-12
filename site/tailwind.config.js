@@ -9,6 +9,9 @@ module.exports = {
       maxWidth: {
         '8xl': '1920px',
       },
+      backgroundImmage: {
+        hero: "url('https://cdn.discordapp.com/attachments/1084536803157090514/1084563027917033522/Stage_Bledner.png')",
+      },
       colors: {
         primary: 'var(--primary)',
         'primary-2': 'var(--primary-2)',

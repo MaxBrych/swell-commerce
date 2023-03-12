@@ -1,5 +1,5 @@
 .root {
-  @apply box-border relative inline-block w-full max-h-full overflow-hidden transition-transform ease-linear bg-center bg-no-repeat bg-cover cursor-pointer rounded-2xl;
+  @apply box-border relative inline-block w-[75vw] md:w-[33vw] xl:w-full max-h-full overflow-hidden transition-transform ease-linear bg-center bg-no-repeat bg-cover cursor-pointer rounded-2xl;
   height: 100% !important;
 }
 /*
@@ -62,11 +62,11 @@
 }
 
 .imageContainer {
-  @apply object-cover w-full h-36 md:h-56 overflow-hidden bg-gray-200 rounded-md;
+  @apply object-cover w-full h-36 md:h-56 overflow-hidden bg-gray-200 rounded-lg;
 }
 
 .imageContainer .productImage {
-  @apply object-cover w-full h-36 md:h-56 overflow-hidden bg-gray-200 rounded-md;
+  @apply object-cover w-full h-36 md:h-56 overflow-hidden bg-gray-200 rounded-lg;
 }
 
 .root .wishlistButton {

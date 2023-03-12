@@ -8,7 +8,14 @@ function ClientSideRoute({
   children: React.ReactNode
   route: string
 }) {
-  return <Link href={route}>{children}</Link>
+  return (
+    <Link
+      className="flex-shrink-0 w-[75vw] md:w-[33vw] lg:w-full lg:flex-1"
+      href={route}
+    >
+      {children}
+    </Link>
+  )
 }
 
 export default ClientSideRoute

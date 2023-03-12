@@ -8,6 +8,7 @@ import { Grid, Marquee, Hero } from '@components/ui'
 // import HomeAllProductsGrid from '@components/common/HomeAllProductsGrid'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import { useEffect, useState } from 'react'
+import Categories from '@components/categorie/categoryList'
 
 export async function getStaticProps({
   preview,
@@ -25,6 +26,7 @@ export async function getStaticProps({
   const pagesPromise = commerce.getAllPages({ config, preview })
   const siteInfoPromise = commerce.getSiteInfo({ config, preview })
   const { products } = await productsPromise
+
   const { pages } = await pagesPromise
   const { categories, brands } = await siteInfoPromise
 
@@ -64,13 +66,16 @@ export default function Home({
 
   return (
     <>
-      <div className="px-4">
+      <div className="px-4 ">
         <div className="my-6">
-          <div className="h-[66vh]  bg-slate-200 rounded-3xl"></div>
+          <div className="h-[66vh] bg-[url('https://cdn.discordapp.com/attachments/1084536803157090514/1084563027917033522/Stage_Bledner.png')]  bg-no-repeat bg-cover bg-center bg-fixed rounded-3xl"></div>
         </div>
-        <div className="grid w-full grid-cols-2 gap-4 md:grid-cols-4 md:px-16">
+
+        <div className="py-2 text-2xl font-semibold">Beliebteste Produkte</div>
+        <div className="flex w-full gap-4 overflow-x-scroll md:grid md:overflow-hidden md:grid-cols-4 ">
           {products.slice(0, 4).map((product: any, i: number) => (
             <ProductCard
+              className="flex-shrink-0 lg:w-full "
               variant="simple"
               key={product.id}
               product={product}

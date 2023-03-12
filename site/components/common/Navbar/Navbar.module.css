@@ -1,6 +1,10 @@
 .root {
-  @apply sticky top-0 bg-primary z-40 transition-all duration-150;
-  min-height: 74px;
+  @apply sticky top-0  z-40 transition-all duration-150;
+  min-height: 72px;
+}
+
+.navContainer {
+  @apply mx-auto mt-4 max-w-6xl px-6 h-16 border bg-primary border-gray-300 rounded-full;
 }
 
 .nav {
