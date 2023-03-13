@@ -84,7 +84,7 @@ export default function Home({
         </div>
         <div className="grid grid-cols-6">
           {categories.map((categorie: any) => (
-            <Link href={`/search/${categorie.slug}`}>
+            <Link href={`/search/${categorie.slug}`} key={categorie.id}>
               <Image src={categorie.image} alt={''} width={32} height={32} />
               <div className="py-2 text-2xl font-semibold">
                 {categorie.name}
