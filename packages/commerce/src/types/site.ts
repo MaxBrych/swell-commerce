@@ -17,6 +17,11 @@ export interface Category {
    * @example /t-shirts
    */
   path: string
+
+  /**
+   * Image.
+   */
+  image: string
 }
 
 export interface Brand {
