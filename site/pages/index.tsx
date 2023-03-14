@@ -82,11 +82,11 @@ export default function Home({
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-6">
+        <div className="grid grid-cols-3 grid-rows-2 py-4 md:grid-rows-1 md:grid-cols-6">
           {categories.map((categorie: any) => (
             <Link href={`/search/${categorie.slug}`} key={categorie.id}>
               <Image src={categorie.image} alt={''} width={32} height={32} />
-              <div className="py-2 text-2xl font-semibold">
+              <div className="py-2 text-sm font-semibold lg:text-lg">
                 {categorie.name}
               </div>
             </Link>
@@ -145,9 +145,7 @@ export default function Home({
         brands={brands}
       /> */}
         <iframe
-          width="600"
-          height="450"
-          className=""
+          className="w-full"
           loading="lazy"
           src="https://www.google.com/maps/embed/v1/place?key=API_KEY
     &q=Space+Needle,Seattle+WA"
