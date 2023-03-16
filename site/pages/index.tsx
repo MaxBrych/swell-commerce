@@ -69,9 +69,9 @@ export default function Home({
 
   return (
     <>
-      <div className="px-4 ">
-        <div className="my-6">
-          <div className="h-[66vh] bg-[url('https://cdn.discordapp.com/attachments/1084536803157090514/1084563027917033522/Stage_Bledner.png')]  bg-no-repeat bg-cover bg-center bg-fixed rounded-3xl">
+      <div className="px-4 md:px-6 ">
+        <div className="my-4">
+          <div className="h-[90vh] bg-[url('https://cdn.discordapp.com/attachments/1084536803157090514/1084563027917033522/Stage_Bledner.png')]  bg-no-repeat bg-cover bg-center bg-fixed rounded-3xl">
             <div className="flex flex-col items-center justify-center h-full gap-5">
               <h1 className="text-4xl font-bold text-center text-white">
                 Hier findest du <br /> was du suchst
@@ -82,7 +82,7 @@ export default function Home({
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-3 grid-rows-2 py-4 md:grid-rows-1 md:grid-cols-6">
+        <div className="grid items-center justify-center grid-cols-3 grid-rows-2 py-16 md:grid-rows-1 md:grid-cols-6">
           {categories.map((categorie: any) => (
             <Link href={`/search/${categorie.slug}`} key={categorie.id}>
               <Image src={categorie.image} alt={''} width={32} height={32} />
