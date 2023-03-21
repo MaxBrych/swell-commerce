@@ -11,7 +11,8 @@ import { useEffect, useState } from 'react'
 import Categories from '@components/categorie/categoryList'
 import Link from 'next/link'
 import Image from 'next/image'
-
+import Vertragspartner from '@components/Vertragspartner/Vertragspartner'
+import Dienstleistungen from '@components/dienstleistungen/Dienstleistungen'
 export async function getStaticProps({
   preview,
   locale,
@@ -73,18 +74,25 @@ export default function Home({
         <div className="my-4">
           <div className="h-[90vh] bg-[url('https://cdn.discordapp.com/attachments/1084536803157090514/1084563027917033522/Stage_Bledner.png')]  bg-no-repeat bg-cover bg-center bg-fixed rounded-3xl">
             <div className="flex flex-col items-center justify-center h-full gap-5">
-              <h1 className="text-4xl font-bold text-center text-white">
+              <h1 className="text-5xl font-bold text-center text-white">
                 Hier findest du <br /> was du suchst
               </h1>
-              <button className="flex items-center justify-center h-12 p-8 bg-orange-500 rounded-full">
+              <Link
+                href="/products"
+                className="flex items-center justify-center h-12 p-8 bg-orange-500 rounded-full"
+              >
                 Zum Shop
-              </button>
+              </Link>
             </div>
           </div>
         </div>
         <div className="grid items-center justify-center grid-cols-3 grid-rows-2 py-16 md:grid-rows-1 md:grid-cols-6">
           {categories.map((categorie: any) => (
-            <Link href={`/search/${categorie.slug}`} key={categorie.id}>
+            <Link
+              href={`/search/${categorie.slug}`}
+              key={categorie.id}
+              className="rounded-full bg-slate-300"
+            >
               <Image src={categorie.image} alt={''} width={32} height={32} />
               <div className="py-2 text-sm font-semibold lg:text-lg">
                 {categorie.name}
@@ -92,7 +100,15 @@ export default function Home({
             </Link>
           ))}
         </div>
-        <div className="py-2 text-2xl font-semibold">Beliebteste Produkte</div>
+        <div className="flex items-stretch justify-between w-full py-2 text-2xl font-semibold">
+          Beliebteste Produkte{' '}
+          <Link
+            href="/products"
+            className="flex items-center justify-center px-5 text-sm rounded-full h-9 bg-slate-300"
+          >
+            Alle Produkte
+          </Link>
+        </div>
         <div className="flex w-full gap-4 overflow-x-scroll md:grid md:overflow-hidden md:grid-cols-4 ">
           {products.slice(0, 4).map((product: any, i: number) => (
             <ProductCard
@@ -109,16 +125,19 @@ export default function Home({
             />
           ))}
         </div>
+        <Vertragspartner />
+        <Dienstleistungen />
+        <Hero
+          headline="Wir kümmern uns um ihre Technik"
+          description="Im Müritzphone Shop Röbel, finden Sie alles was Sie für Ihr Smartphone, Tablet oder Notebook benötigen. Wir bieten Ihnen eine große Auswahl an Zubehör, Ersatzteilen und Reparaturen."
+        />
         <BlogList posts={posts} />
         {/*     <Marquee variant="secondary">
         {products.slice(0, 3).map((product: any, i: number) => (
           <ProductCard key={product.id} product={product} variant="slim" />
         ))}
       </Marquee>*/}
-        <Hero
-          headline="Wir kümmern uns um ihre Technik"
-          description="Im Müritzphone Shop Röbel, finden Sie alles was Sie für Ihr Smartphone, Tablet oder Notebook benötigen. Wir bieten Ihnen eine große Auswahl an Zubehör, Ersatzteilen und Reparaturen."
-        />
+
         {/*
         <Grid layout="B" variant="filled">
           {products.slice(0, 3).map((product: any, i: number) => (
