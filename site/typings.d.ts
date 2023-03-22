@@ -17,6 +17,11 @@ interface Post extends Base {
   description: string
 }
 
+interface Kunden extends Base {
+  kommentar: string
+  name: string
+}
+
 interface Author extends Base {
   intro: ReactNode
   bio: Block[]

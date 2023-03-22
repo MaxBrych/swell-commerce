@@ -43,12 +43,18 @@ export async function getStaticProps({
     revalidate: 60,
   }
 }
-const query = groq`
+const postQuery = groq`
 *[_type=='post']{
   ...,
   author->,
   categories[]->
 } | order(_createdAt desc)
+`
+const kundenQuery = groq`
+*[_type=='kunden']{
+  name,
+  kommentar
+} 
 `
 
 export const revalidate = 30
@@ -62,7 +68,7 @@ export default function Home({
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const data = await client.fetch(query)
+      const data = await client.fetch(postQuery)
       setPosts(data)
     }
     fetchPosts()
