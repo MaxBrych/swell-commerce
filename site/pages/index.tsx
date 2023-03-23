@@ -13,6 +13,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Vertragspartner from '@components/Vertragspartner/Vertragspartner'
 import Dienstleistungen from '@components/dienstleistungen/Dienstleistungen'
+import ProductList from '@components/product/ProductList/ProductList'
+import Kunden from '@components/kunden/Kunden'
 export async function getStaticProps({
   preview,
   locale,
@@ -65,6 +67,15 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [documents, setDocuments] = useState(null)
   const [posts, setPosts] = useState([])
+  const [kunden, setKunden] = useState([])
+
+  useEffect(() => {
+    const fetchKunden = async () => {
+      const data = await client.fetch(kundenQuery)
+      setKunden(data)
+    }
+    fetchKunden()
+  }, [])
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -94,43 +105,22 @@ export default function Home({
         </div>
         <div className="grid items-center justify-center grid-cols-3 grid-rows-2 py-16 md:grid-rows-1 md:grid-cols-6">
           {categories.map((categorie: any) => (
-            <Link
-              href={`/search/${categorie.slug}`}
-              key={categorie.id}
-              className="rounded-full bg-slate-300"
-            >
-              <Image src={categorie.image} alt={''} width={32} height={32} />
+            <Link href={`/search/${categorie.slug}`} key={categorie.id}>
+              <Image
+                src={categorie.image}
+                alt={''}
+                width={32}
+                height={32}
+                className="w-8 h-8 rounded-full bg-slate-300"
+              />
               <div className="py-2 text-sm font-semibold lg:text-lg">
                 {categorie.name}
               </div>
             </Link>
           ))}
         </div>
-        <div className="flex items-stretch justify-between w-full py-2 text-2xl font-semibold">
-          Beliebteste Produkte{' '}
-          <Link
-            href="/products"
-            className="flex items-center justify-center px-5 text-sm rounded-full h-9 bg-slate-300"
-          >
-            Alle Produkte
-          </Link>
-        </div>
-        <div className="flex w-full gap-4 overflow-x-scroll md:grid md:overflow-hidden md:grid-cols-4 ">
-          {products.slice(0, 4).map((product: any, i: number) => (
-            <ProductCard
-              className="flex-shrink-0 lg:w-full md:flex-1 "
-              variant="simple"
-              key={product.id}
-              product={product}
-              imgProps={{
-                alt: product.name,
-                width: i === 0 ? 1080 : 540,
-                height: i === 0 ? 1080 : 540,
-                priority: true,
-              }}
-            />
-          ))}
-        </div>
+        <ProductList products={products} />
+        <Kunden kunden={kunden} />
         <Vertragspartner />
         <Dienstleistungen />
         <Hero
@@ -138,42 +128,13 @@ export default function Home({
           description="Im Müritzphone Shop Röbel, finden Sie alles was Sie für Ihr Smartphone, Tablet oder Notebook benötigen. Wir bieten Ihnen eine große Auswahl an Zubehör, Ersatzteilen und Reparaturen."
         />
         <BlogList posts={posts} />
-        {/*     <Marquee variant="secondary">
-        {products.slice(0, 3).map((product: any, i: number) => (
-          <ProductCard key={product.id} product={product} variant="slim" />
-        ))}
-      </Marquee>*/}
 
-        {/*
-        <Grid layout="B" variant="filled">
-          {products.slice(0, 3).map((product: any, i: number) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              imgProps={{
-                alt: product.name,
-                width: i === 1 ? 1080 : 540,
-                height: i === 1 ? 1080 : 540,
-              }}
-            />
-          ))}
-        </Grid>
-        
-        <Marquee>
-          {products.slice(3).map((product: any, i: number) => (
-            <ProductCard key={product.id} product={product} variant="slim" />
-          ))}
-        </Marquee>
-         <HomeAllProductsGrid
-        newestProducts={products}
-        categories={categories}
-        brands={brands}
-      /> */}
         <iframe
-          className="w-full"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2380.1903661234505!2d12.603554015768516!3d53.37564328021764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a9551f03a7d6c1%3A0x79557130cae33f59!2sM%C3%BCritzPhone!5e0!3m2!1sde!2sde!4v1679595106061!5m2!1sde!2sde"
+          width="600"
+          height="450"
+          style={{ border: 0 }}
           loading="lazy"
-          src="https://www.google.com/maps/embed/v1/place?key=API_KEY
-    &q=Space+Needle,Seattle+WA"
         ></iframe>
       </div>
     </>

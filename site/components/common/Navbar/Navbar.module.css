@@ -1,10 +1,10 @@
 .root {
-  @apply sticky top-0  border border-b-slate-200 z-40 h-20 transition-all duration-150;
+  @apply sticky top-0 bg-white  border border-b-slate-200 z-40 h-20 transition-all duration-150;
   min-height: 72px;
 }
 
 .navContainer {
-  @apply mx-auto border border-b-slate-200 w-full px-6 h-16 bg-primary;
+  @apply mx-auto  w-full  px-6 h-20 bg-primary;
 }
 
 .nav {

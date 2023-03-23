@@ -71,6 +71,7 @@ interface Title {
 }
 
 interface Product extends Base {
+  slice(arg0: number, arg1: number): unknown
   store: StoreTitle
   categories: Category[]
   slug: Slug
