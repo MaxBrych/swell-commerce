@@ -3,7 +3,7 @@ interface Props {}
 
 const Dienstleistungen: FC<Props> = () => {
   return (
-    <>
+    <div className="px-4 md:px-8 lg:px-16 ">
       <div className="py-12 md:py-16">
         <h1 className="text-4xl text-center md:text-5xl ">Dienstleistungen</h1>
         <div className="flex w-full gap-6 overflow-x-auto md:grid md:grid-cols-3">
@@ -21,7 +21,7 @@ const Dienstleistungen: FC<Props> = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

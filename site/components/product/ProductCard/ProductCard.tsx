@@ -50,6 +50,7 @@ const ProductCard: FC<Props> = ({
           </div>
           {product?.images && (
             <Image
+              className="object-cover object-center h-[320px] w-[320px]"
               quality="85"
               src={product.images[0]?.url || placeholderImg}
               alt={product.name || 'Product Image'}

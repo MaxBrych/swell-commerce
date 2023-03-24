@@ -12,14 +12,14 @@ export default function BlogList({ posts }: Props) {
   }
 
   return (
-    <div className="w-full py-8 md:py-16">
+    <div className="w-full px-4 py-8 md:px-8 lg:px-16">
       <div className="py-2 text-2xl font-semibold ">Bilde dich weiter</div>
       <div className="flex gap-4 overflow-x-scroll md:grid md:overflow-hidden md:grid-cols-3 md:w-full md:gap-x-4 gap-y-16">
         {/* Posts */}
         {posts.map((post) => (
           <ClientSideRoute key={post._id} route={`/post/${post.slug.current}`}>
             <div className="flex flex-col cursor-pointer group">
-              <div className="relative w-full h-44 md:h-56">
+              <div className="relative w-full h-48 md:h-56">
                 <Image
                   className="object-cover object-left rounded-2xl"
                   src={urlFor(post.mainImage).url()}

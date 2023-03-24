@@ -8,7 +8,7 @@ interface ProductListProps {
 }
 
 const ProductList: React.FC<ProductListProps> = ({ products }) => (
-  <>
+  <div className="px-4 md:px-8 lg:px-16 ">
     <div className="flex items-stretch justify-between w-full py-2 text-2xl font-semibold">
       Beliebteste Produkte{' '}
       <Link
@@ -21,7 +21,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => (
     <div className="flex w-full gap-4 overflow-x-scroll md:grid md:overflow-hidden md:grid-cols-4 ">
       {products.slice(0, 4).map((product: any, i: number) => (
         <ProductCard
-          className="flex-shrink-0 lg:w-full md:flex-1 "
+          className="flex-shrink-0 w-[33vw] lg:w-full md:flex-1 "
           variant="simple"
           key={product.id}
           product={product}
@@ -34,7 +34,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => (
         />
       ))}
     </div>
-  </>
+  </div>
 )
 
 export default ProductList

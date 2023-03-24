@@ -9,6 +9,7 @@ import { Logo, Container } from '@components/ui'
 import { I18nWidget } from '@components/common'
 import ThemeSwitcher from '@components/ui/ThemeSwitcher'
 import s from './Footer.module.css'
+import Image from 'next/image'
 
 interface Props {
   className?: string
@@ -30,16 +31,17 @@ const Footer: FC<Props> = ({ className, pages }) => {
   return (
     <footer className={rootClassName}>
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 border-b border-accent-2 py-12 text-primary bg-primary transition-colors duration-150">
+        <div className="grid grid-cols-1 gap-8 py-12 transition-colors duration-150 border-b lg:grid-cols-12 border-accent-2 text-primary bg-primary">
           <div className="col-span-1 lg:col-span-2">
-            <Link
-              href="/"
-              className="flex flex-initial items-center font-bold md:mr-24"
-            >
-              <span className="rounded-full border border-accent-6 mr-2">
-                <Logo />
-              </span>
-              <span>ACME</span>
+            <Link href="/" className={s.logo} aria-label="Logo">
+              {/*<Logo />*/}
+              <Image
+                src="https://cdn.discordapp.com/attachments/911669935363752026/1088717883363840130/Logo.png"
+                alt="Logo"
+                width={112}
+                height={40}
+                className=""
+              />
             </Link>
           </div>
           <div className="col-span-1 lg:col-span-7">
@@ -48,7 +50,7 @@ const Footer: FC<Props> = ({ className, pages }) => {
                 <span key={page.url} className="py-3 md:py-0 md:pb-4">
                   <Link
                     href={page.url!}
-                    className="text-accent-9 hover:text-accent-6 transition ease-in-out duration-150"
+                    className="transition duration-150 ease-in-out text-accent-9 hover:text-accent-6"
                   >
                     {page.name}
                   </Link>
@@ -56,8 +58,8 @@ const Footer: FC<Props> = ({ className, pages }) => {
               ))}
             </div>
           </div>
-          <div className="col-span-1 lg:col-span-3 flex items-start lg:justify-end text-primary">
-            <div className="flex space-x-4 items-center h-10">
+          <div className="flex items-start col-span-1 lg:col-span-3 lg:justify-end text-primary">
+            <div className="flex items-center h-10 space-x-4">
               <ThemeSwitcher />
               <I18nWidget />
               <a
@@ -70,11 +72,11 @@ const Footer: FC<Props> = ({ className, pages }) => {
             </div>
           </div>
         </div>
-        <div className="pt-6 pb-10 flex flex-col md:flex-row justify-between items-center space-y-4 text-accent-6 text-sm">
+        <div className="flex flex-col items-center justify-between pt-6 pb-10 space-y-4 text-sm md:flex-row text-accent-6">
           <div>
             <span>&copy; 2020 ACME, Inc. All rights reserved.</span>
           </div>
-          <div className="flex items-center text-primary text-sm">
+          <div className="flex items-center text-sm text-primary">
             <span className="text-primary">Created by</span>
             <a
               rel="noopener noreferrer"
