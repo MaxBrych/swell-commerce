@@ -50,12 +50,11 @@ export async function getStaticProps({
 }
 
 export default function Navbar({
-  products,
   categories = [],
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [isOpen, setIsOpen] = useState(false)
   const toggleIsOpen = () => setIsOpen(!isOpen)
-  console.log(categories)
+
   return (
     <NavbarRoot>
       <Container clean className={s.navContainer}>
