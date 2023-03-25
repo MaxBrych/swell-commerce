@@ -89,7 +89,7 @@ export default function Home({
 
   return (
     <>
-      <div className="">
+      <div className="font-sk-modernist font-normal">
         <div className="">
           <div className="h-[90vh] bg-[url('https://cdn.discordapp.com/attachments/1084536803157090514/1084563027917033522/Stage_Bledner.png')]  bg-no-repeat bg-cover bg-center ">
             <div className="flex flex-col items-center justify-center h-full gap-5">

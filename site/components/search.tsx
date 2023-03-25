@@ -16,9 +16,9 @@ import rangeMap from '@lib/range-map'
 
 const SORT = {
   'trending-desc': 'Trending',
-  'latest-desc': 'Latest arrivals',
-  'price-asc': 'Price: Low to high',
-  'price-desc': 'Price: High to low',
+  'latest-desc': 'Neuheiten',
+  'price-asc': 'Preis Aufsteigend',
+  'price-desc': 'Preis Absteigend',
 }
 
 import {
@@ -28,6 +28,8 @@ import {
   useSearchMeta,
 } from '@lib/search'
 import ErrorMessage from './ui/ErrorMessage'
+import CategoryGrid from './categorie/categoryGrid'
+import CategoryRow from './categorie/categoryRow'
 
 export default function Search({ categories, brands }: SearchPropsType) {
   const [activeFilter, setActiveFilter] = useState('')
@@ -67,11 +69,16 @@ export default function Search({ categories, brands }: SearchPropsType) {
     setActiveFilter(filter)
   }
 
+  const [isOpen, setIsOpen] = useState(false)
+  const toggleIsOpen = () => setIsOpen(!isOpen)
+
   return (
     <Container>
+      <CategoryRow categories={categories} />
+
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mt-3 mb-20">
         <div className="col-span-8 lg:col-span-2 order-1 lg:order-none">
-          {/* Categories */}
+          {/* Categories 
           <div className="relative inline-block w-full">
             <div className="lg:hidden">
               <span className="rounded-md shadow-sm">
@@ -133,7 +140,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                             'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
                           }
                         >
-                          All Categories
+                          Alle Kategorien
                         </a>
                       </Link>
                     </li>
@@ -169,9 +176,9 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 </div>
               </div>
             </div>
-          </div>
+          </div>*/}
 
-          {/* Designs */}
+          {/* Designs 
           <div className="relative inline-block w-full">
             <div className="lg:hidden mt-3">
               <span className="rounded-md shadow-sm">
@@ -272,8 +279,9 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 </div>
               </div>
             </div>
-          </div>
+          </div>*/}
         </div>
+
         {/* Products */}
         <div className="col-span-8 order-3 lg:order-none">
           {(q || activeCategory || activeBrand) && (
@@ -405,7 +413,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                             'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
                           }
                         >
-                          Relevance
+                          Relevanz
                         </a>
                       </Link>
                     </li>

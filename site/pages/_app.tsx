@@ -6,6 +6,8 @@ import { FC, ReactNode, useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import { Head } from '@components/common'
 import { ManagedUIContext } from '@components/ui/context'
+import '../styles/fonts.css'
+import 'tailwindcss/tailwind.css'
 
 const Noop: FC<{ children?: ReactNode }> = ({ children }) => <>{children}</>
 

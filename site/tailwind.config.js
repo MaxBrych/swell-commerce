@@ -6,6 +6,9 @@ module.exports = {
   safelist: ['outline-none'],
   theme: {
     extend: {
+      fontFamily: {
+        'sk-modernist': ['SKModernist', 'fallback-font', 'sans-serif'],
+      },
       maxWidth: {
         '8xl': '1920px',
       },

@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'SKModernist';
+  src: url('/fonts/sk-modernist-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SKModernist';
+  src: url('/fonts/sk-modernist-bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
