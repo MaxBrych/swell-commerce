@@ -69,9 +69,6 @@ export default function Search({ categories, brands }: SearchPropsType) {
     setActiveFilter(filter)
   }
 
-  const [isOpen, setIsOpen] = useState(false)
-  const toggleIsOpen = () => setIsOpen(!isOpen)
-
   return (
     <Container>
       <CategoryRow categories={categories} />
