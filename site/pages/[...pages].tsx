@@ -70,13 +70,11 @@ export async function getStaticPaths({ locales }: GetStaticPathsContext) {
   }
 }
 
-export default function Pages({
-  page,
-}: {page: Page}) {
+export default function Pages({ page }: { page: Page }) {
   const router = useRouter()
 
   return router.isFallback ? (
-    <h1>Loading...</h1> // TODO (BC) Add Skeleton Views
+    <h1>Läd...</h1> // TODO (BC) Add Skeleton Views
   ) : (
     <div className="max-w-2xl mx-8 sm:mx-auto py-20">
       {page?.body && <Text html={page.body} />}

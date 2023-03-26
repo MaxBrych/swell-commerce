@@ -91,13 +91,13 @@ export default function Home({
     <>
       <div className="font-sk-modernist font-normal">
         <div className="">
-          <div className="h-[90vh] bg-[url('https://cdn.discordapp.com/attachments/1084536803157090514/1084563027917033522/Stage_Bledner.png')]  bg-no-repeat bg-cover bg-center ">
+          <div className="h-[75vh] bg-[url('https://cdn.discordapp.com/attachments/1084536803157090514/1084563027917033522/Stage_Bledner.png')]  bg-no-repeat bg-cover bg-center ">
             <div className="flex flex-col items-center justify-center h-full gap-5">
-              <h1 className="text-3xl font-bold text-center text-black md:text-5xl">
+              <h1 className="text-4xl font-bold text-center text-black md:text-5xl">
                 Hier findest du <br /> was du suchst
               </h1>
               <Link
-                href="/products"
+                href="/search"
                 className="flex items-center justify-center h-12 p-8 bg-orange-500 rounded-full"
               >
                 Zum Shop

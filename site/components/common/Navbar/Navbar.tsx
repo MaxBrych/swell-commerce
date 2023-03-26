@@ -62,7 +62,7 @@ export default function Navbar({
           <div className="flex items-center flex-1">
             <nav className={s.navMenu}>
               <Link href="/search" className={s.link}>
-                All
+                Dienstleistungen
               </Link>
               <Link
                 onMouseOver={toggleIsOpen}
@@ -88,7 +88,7 @@ export default function Navbar({
                           alt={''}
                           width={32}
                           height={32}
-                          className="w-8 h-8 rounded-full bg-slate-300"
+                          className="w-8 h-8 rounded-full bg-gray-300"
                         />
                         <div className="py-2 text-sm font-semibold lg:text-lg">
                           {categorie.name}
@@ -96,6 +96,12 @@ export default function Navbar({
                       </Link>
                     ))}
                   </div>
+                  <Link href="/blog" className={s.link}>
+                    Blog
+                  </Link>
+                  <Link href="/about" className={s.link}>
+                    Über Uns
+                  </Link>
                 </div>
               </div>
               {/*  {links?.map((l) => (

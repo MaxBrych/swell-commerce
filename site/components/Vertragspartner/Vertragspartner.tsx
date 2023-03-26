@@ -8,7 +8,7 @@ const Vertragspartner: FC<Props> = () => {
         <h1 className="text-4xl text-center font-bold md:text-4xl mb-4">
           Vertragspartner
         </h1>
-        <div className="flex justify-between w-full h-32 gap-4 overflow-x-auto bg-gray-300 rounded-2xl">
+        <div className="flex justify-between w-full h-32 gap-4 overflow-x-auto bg-gray-100 rounded-2xl">
           <div>Partner</div>
           <div>Partner</div>
           <div>Partner</div>
