@@ -54,6 +54,7 @@ export default function Navbar({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const [isOpen, setIsOpen] = useState(false)
   const toggleIsOpen = () => setIsOpen(!isOpen)
+  const toggleIsClose = () => setIsOpen(isOpen)
 
   return (
     <NavbarRoot>
@@ -64,8 +65,15 @@ export default function Navbar({
               <Link href="/search" className={s.link}>
                 Dienstleistungen
               </Link>
+              <Link href="/blog" className={s.link}>
+                Blog
+              </Link>
+              <Link href="/about" className={s.link}>
+                Über Uns
+              </Link>
               <Link
                 onMouseOver={toggleIsOpen}
+                onMouseLeave={toggleIsClose}
                 href="/search"
                 className={s.link}
               >
@@ -74,10 +82,10 @@ export default function Navbar({
               <div
                 className={`${
                   isOpen ? 'block' : 'hidden'
-                } fixed grid grid-cols-3 gap-x-16 top-[64px] p-6 h-32 w-[99vw] z-20 bg-primary bg-white `}
+                } fixed h-[33vh] top-[64px] p-6  w-[99vw] z-20 bg-primary bg-white `}
               >
                 <div>
-                  <div className="grid items-center justify-center grid-cols-3 grid-rows-2 py-16 md:grid-rows-1 md:grid-cols-6">
+                  <div className="grid items-center justify-center w-full grid-cols-3 grid-rows-2 py-16 md:grid-rows-1 md:grid-cols-6">
                     {categories.map((categorie: any) => (
                       <Link
                         href={`/search/${categorie.slug}`}
@@ -96,14 +104,9 @@ export default function Navbar({
                       </Link>
                     ))}
                   </div>
-                  <Link href="/blog" className={s.link}>
-                    Blog
-                  </Link>
-                  <Link href="/about" className={s.link}>
-                    Über Uns
-                  </Link>
                 </div>
               </div>
+
               {/*  {links?.map((l) => (
               <Link href={l.href} key={l.href} className={s.link}>
                 {l.label}

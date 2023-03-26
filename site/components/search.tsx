@@ -354,7 +354,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
         {/* Sort */}
         <div className="col-span-8 lg:col-span-2 order-2 lg:order-none">
           <div className="relative inline-block w-full">
-            <div className="lg:hidden">
+            <div className="">
               <span className="rounded-md shadow-sm">
                 <button
                   type="button"
@@ -381,7 +381,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
               </span>
             </div>
             <div
-              className={`origin-top-left absolute lg:relative left-0 mt-2 w-full rounded-md shadow-lg lg:shadow-none z-10 mb-10 lg:block ${
+              className={`origin-top-left absolute lg:relative left-0 mt-2 w-full rounded-md shadow-lg lg:shadow-none z-10 mb-10  ${
                 activeFilter !== 'sort' || toggleFilter !== true ? 'hidden' : ''
               }`}
             >

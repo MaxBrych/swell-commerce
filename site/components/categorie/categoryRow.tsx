@@ -8,22 +8,22 @@ interface CategoryProps {
 }
 
 const CategoryRow: React.FC<CategoryProps> = ({ categories }) => (
-  <div className="px-4 md:px-8 lg:px-16 ">
-    <div className="flex overflow-x-auto items-center justify-center md:grid gap-4  py-16 md:grid-rows-1 md:grid-cols-6">
+  <div className="">
+    <div className="sticky bg-white items-center  top-16 w-full flex z-20 overflow-x-auto  md:grid gap-4 py-4 md:grid-rows-1 md:items-center md:grid-cols-6">
       {categories.map((categorie: any) => (
         <Link
           href={`/search/${categorie.slug}`}
           key={categorie.id}
-          className="flex-shrink-0 justify-center items-center"
+          className="flex-shrink-0 justify-center flex flex-col items-center"
         >
           <Image
             src={categorie.image}
             alt={''}
             width={32}
             height={32}
-            className="w-8 h-8 rounded-full bg-slate-300"
+            className="w-12 h-12 rounded-full bg-slate-300"
           />
-          <div className="py-2 text-sm font-semibold lg:text-lg">
+          <div className="py-2 text-sm font-semibold lg:text-base">
             {categorie.name}
           </div>
         </Link>

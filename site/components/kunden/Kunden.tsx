@@ -6,7 +6,10 @@ interface Props {
 const Kunden: FC<Props> = ({ kunden }: Props) => {
   return (
     <div className="px-4 md:px-8 lg:px-16 py-6 md:py-16 ">
-      <div className="flex gap-6 py-12 overflow-x-auto md:py-16 md:grid md:grid-cols-4">
+      <h1 className="text-4xl text-center py-3 font-bold md:text-4xl mb-4">
+        Das sagen unsere Kunden
+      </h1>
+      <div className="flex gap-6  overflow-x-auto  md:grid md:grid-cols-4">
         {kunden.map((kunde) => (
           <div
             key={kunde._id}

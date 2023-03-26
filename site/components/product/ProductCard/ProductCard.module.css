@@ -62,11 +62,11 @@
 }
 
 .imageContainer {
-  @apply object-cover w-full h-36 md:h-56 overflow-hidden bg-gray-200 rounded-lg;
+  @apply object-cover w-full h-36 mb-2 md:h-56 overflow-hidden bg-gray-200 rounded-lg;
 }
 
 .imageContainer .productImage {
-  @apply object-cover w-full h-36 md:h-56 overflow-hidden bg-gray-200 rounded-lg;
+  @apply object-cover w-full h-36  md:h-56 overflow-hidden bg-gray-200 rounded-lg;
 }
 
 .root .wishlistButton {

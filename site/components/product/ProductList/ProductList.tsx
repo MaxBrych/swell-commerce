@@ -9,7 +9,7 @@ interface ProductListProps {
 
 const ProductList: React.FC<ProductListProps> = ({ products }) => (
   <div className="px-4 md:px-8 lg:px-16 ">
-    <div className="flex items-stretch justify-between w-full py-2 text-2xl font-semibold">
+    <div className="flex items-stretch justify-between w-full py-3 text-2xl font-semibold">
       Beliebte Produkte{' '}
       <Link
         href="/search"
