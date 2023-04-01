@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ProductCard } from '@components/product'
+import getImageUrl from '../../../packages/spree/src/utils/get-image-url'
 
 interface CategoryProps {
   categories: any
@@ -14,14 +15,14 @@ const CategoryGrid: React.FC<CategoryProps> = ({ categories }) => (
         <Link
           href={`/search/${categorie.slug}`}
           key={categorie.id}
-          className="items-center justify-center flex flex-col"
+          className="flex flex-col items-center justify-center"
         >
           <Image
-            src={categorie.image}
+            src={categorie.getImageUrl}
             alt={''}
             width={32}
             height={32}
-            className="w-8 h-8 md:h-12 md:w-12 rounded-full bg-gray-300"
+            className="w-8 h-8 bg-gray-300 rounded-full md:h-12 md:w-12"
           />
           <div className="py-2 text-sm font-semibold lg:text-lg">
             {categorie.name}

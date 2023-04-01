@@ -21,7 +21,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => (
     <div className="flex w-full gap-4 overflow-x-scroll md:grid md:overflow-hidden md:grid-cols-4 ">
       {products.slice(0, 4).map((product: any, i: number) => (
         <ProductCard
-          className="flex-shrink-0 w-[33vw] lg:w-full md:flex-1 "
+          className="product-list-card flex-shrink-0 w-[75vw] md:w-[33vw] lg:w-full md:flex-1"
           variant="simple"
           key={product.id}
           product={product}

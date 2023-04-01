@@ -10,6 +10,7 @@ import type { Product } from '@commerce/types/product'
 import { Layout } from '@components/common'
 import { ProductCard } from '@components/product'
 import { Container, Skeleton } from '@components/ui'
+import adCarousel from './ads/adCarousel'
 
 import useSearch from '@framework/product/use-search'
 import rangeMap from '@lib/range-map'
@@ -30,6 +31,7 @@ import {
 import ErrorMessage from './ui/ErrorMessage'
 import CategoryGrid from './categorie/categoryGrid'
 import CategoryRow from './categorie/categoryRow'
+import AdCarousel from './ads/adCarousel'
 
 export default function Search({ categories, brands }: SearchPropsType) {
   const [activeFilter, setActiveFilter] = useState('')
@@ -72,7 +74,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
   return (
     <Container>
       <CategoryRow categories={categories} />
-
+      <AdCarousel />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mt-3 mb-20">
         <div className="col-span-8 lg:col-span-2 order-1 lg:order-none">
           {/* Categories 
@@ -325,7 +327,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
             </div>
           )}
           {data ? (
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 grid-cols-2 lg:grid-cols-3">
               {data.products.map((product: Product) => (
                 <ProductCard
                   variant="simple"
