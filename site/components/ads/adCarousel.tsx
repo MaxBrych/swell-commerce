@@ -4,7 +4,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { useAdCarousel } from './useAdCarousel'
 import Image from 'next/image'
 
-const adCarousel = () => {
+const AdCarousel = () => {
   const { data, isLoading, isError } = useAdCarousel()
 
   if (isLoading) {
@@ -40,4 +40,4 @@ const adCarousel = () => {
   )
 }
 
-export default adCarousel
+export default AdCarousel
