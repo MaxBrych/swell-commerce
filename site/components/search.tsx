@@ -73,8 +73,9 @@ export default function Search({ categories, brands }: SearchPropsType) {
 
   return (
     <Container>
-      <CategoryRow categories={categories} />
       <AdCarousel />
+      <CategoryRow categories={categories} />
+
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mt-3 mb-20">
         <div className="col-span-8 lg:col-span-2 order-1 lg:order-none">
           {/* Categories 

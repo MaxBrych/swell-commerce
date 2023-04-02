@@ -1,5 +1,5 @@
 .root {
-  @apply sticky top-0 bg-white  border border-b-slate-200 z-40 h-16 transition-all duration-150;
+  @apply bg-white  border border-b-slate-200 z-40 h-16 transition-all duration-150;
   min-height: 72px;
 }
 
