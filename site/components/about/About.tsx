@@ -23,12 +23,12 @@ const About = () => {
           body: any
           author: { name: string; imageUrl: string }
         }) => (
-          <div key={item._id} className="rounded-3xl">
-            <div className="h-64 md:h-96 w-full rounded-3xl">
+          <div key={item._id} className="">
+            <div className="w-full h-64 md:h-96">
               <Image
                 src={item.imageUrl}
                 alt={item.title}
-                className="object-cover h-full w-full rounded-3xl"
+                className="object-cover w-full h-full"
                 width={640}
                 height={320}
               />
@@ -42,7 +42,7 @@ const About = () => {
                 <Image
                   src={item.author.imageUrl}
                   alt={item.author.name}
-                  className="object-cover h-full w-full rounded-full"
+                  className="object-cover w-full h-full rounded-full"
                   width={64}
                   height={64}
                 />

@@ -26,11 +26,11 @@ const AdCarousel = () => {
       transitionTime={500}
     >
       {data.map((item: { _id: string; imageUrl: string; title: string }) => (
-        <div key={item._id} className="h-64 md:h-96 w-full rounded-3xl">
+        <div key={item._id} className="w-full h-64 md:h-96 ">
           <Image
             src={item.imageUrl}
             alt={item.title}
-            className="object-cover h-full w-full rounded-3xl "
+            className="object-cover w-full h-full"
             width={640} // Add this
             height={320} // Add this
           />

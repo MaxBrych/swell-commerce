@@ -96,7 +96,7 @@ export default function Navbar({
                           alt={''}
                           width={32}
                           height={32}
-                          className="w-8 h-8 rounded-full bg-gray-300"
+                          className="w-8 h-8 bg-gray-300 rounded-full"
                         />
                         <div className="py-2 text-sm font-semibold lg:text-lg">
                           {categorie.name}
@@ -135,7 +135,7 @@ export default function Navbar({
           </div>
         </div>
         {process.env.COMMERCE_SEARCH_ENABLED && (
-          <div className="flex pb-4 lg:px-6 lg:hidden">
+          <div className="flex pb-4 lg:px-6">
             <Searchbar id="mobile-search" />
           </div>
         )}

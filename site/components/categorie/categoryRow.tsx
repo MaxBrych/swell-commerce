@@ -10,7 +10,7 @@ interface CategoryProps {
 
 const CategoryRow: React.FC<CategoryProps> = ({ categories }) => (
   <div className="">
-    <div className="sticky z-20 flex items-center w-full gap-4 py-4 overflow-x-auto bg-white top-16 md:grid md:grid-rows-1 md:items-center md:grid-cols-6">
+    <div className="sticky z-20 flex items-center w-full gap-4 px-4 py-4 overflow-x-auto bg-white top-16 md:grid md:grid-rows-1 md:items-center md:grid-cols-6">
       {categories.map((categorie: any) => (
         <Link
           href={`/search/${categorie.slug}`}
