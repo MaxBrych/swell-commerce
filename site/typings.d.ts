@@ -15,6 +15,8 @@ interface Post extends Base {
   title: string
   intro: string
   description: string
+  _id: string
+  slug: Slug
 }
 
 interface Kunden extends Base {

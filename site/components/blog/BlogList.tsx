@@ -1,14 +1,21 @@
 import Image from 'next/image'
 import urlFor from '../../lib/urlFor'
 import ClientSideRoute from './ClientSideRoute'
+import { usePost } from './usePost'
 
 type Props = {
   posts: Post[]
 }
 
-export default function BlogList({ posts }: Props) {
-  {
-    /*console.log(posts.length);*/
+export default function BlogList() {
+  const { data, isLoading, isError } = usePost()
+
+  if (isLoading) {
+    return <div>Inhalt läd...</div>
+  }
+
+  if (isError) {
+    return <div>Error: {isError.message}</div>
   }
 
   return (
@@ -16,12 +23,12 @@ export default function BlogList({ posts }: Props) {
       <div className="py-2 text-2xl font-semibold ">Bilde dich weiter</div>
       <div className="flex gap-4 overflow-x-scroll md:grid md:overflow-hidden md:grid-cols-3 md:w-full md:gap-x-4 gap-y-16">
         {/* Posts */}
-        {posts.map((post) => (
+        {data.map((post: any) => (
           <ClientSideRoute key={post._id} route={`/post/${post.slug.current}`}>
             <div className="flex flex-col cursor-pointer group">
               <div className="relative w-full h-40 md:h-56">
                 <Image
-                  className="object-cover object-left rounded-2xl"
+                  className="object-cover object-left rounded-xl"
                   src={urlFor(post.mainImage).url()}
                   alt={post.title}
                   fill

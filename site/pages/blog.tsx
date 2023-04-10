@@ -1,33 +1,26 @@
-import { groq } from 'next-sanity'
-import { client } from '@lib/sanity.client'
+// pages/blog.tsx
 import BlogList from '@components/blog/BlogList'
-import { useEffect, useState } from 'react'
+import FeaturedPost from '@components/blog/FeaturedPost'
+import { usePost } from '@components/blog/usePost'
 import { Head, Layout } from '@components/common'
 
-const query = groq`
-*[_type=='post']{
-  ...,
-  author->,
-  categories[]->
-} | order(_createdAt desc)
-`
-
-export const revalidate = 30 //revalidate content on this page every 39 seconds
-
 export default function Blog() {
-  // const posts = await client.fetch(query)
-  const [posts, setPosts] = useState([])
+  const { data, isLoading, isError } = usePost()
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const data = await client.fetch(query)
-      setPosts(data)
-    }
-    fetchPosts()
-  }, [])
+  if (isLoading) {
+    return <div>Loading...</div>
+  }
+
+  if (isError) {
+    return <div>Error: {isError.message}</div>
+  }
+
+  const newestPost = data[0]
+
   return (
     <>
-      <BlogList posts={posts} />
+      <FeaturedPost post={newestPost} />
+      <BlogList />
     </>
   )
 }

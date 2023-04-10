@@ -6,7 +6,7 @@ const About = () => {
   const { data, isLoading, isError } = useAbout()
 
   if (isLoading) {
-    return <div>Loading...</div>
+    return <div>Inhalt läd...</div>
   }
 
   if (isError) {
