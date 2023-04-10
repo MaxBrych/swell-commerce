@@ -142,6 +142,7 @@ export function normalizeProduct(swellProduct: SwellProduct): Product {
       value,
       currencyCode,
     },
+    metafields: [],
   }
   return product
 }
