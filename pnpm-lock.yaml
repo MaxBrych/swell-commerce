@@ -4,6 +4,7 @@ importers:
 
   .:
     specifiers:
+      '@sanity/block-content-to-react': ^3.0.0
       autoprefixer: ^10.4.14
       husky: ^8.0.3
       postcss: ^8.4.21
@@ -11,6 +12,7 @@ importers:
       tailwindcss: ^3.3.1
       turbo: ^1.8.3
     dependencies:
+      '@sanity/block-content-to-react': 3.0.0
       autoprefixer: 10.4.14_postcss@8.4.21
       postcss: 8.4.21
       tailwindcss: 3.3.1_postcss@8.4.21
@@ -4945,6 +4947,15 @@ packages:
       '@sanity/image-url': 0.140.22
       hyperscript: 2.0.2
       object-assign: 4.1.1
+    dev: false
+
+  /@sanity/block-content-to-react/3.0.0:
+    resolution: {integrity: sha512-oHPLlIsulsnL3ITs93RIvUPBI6nAeoSFOUf16vX4T7z4wWywxP39N1DF9mAx2tV6Kjr1fJAx5GF7zfiMXYLaqA==}
+    peerDependencies:
+      react: '>=15.0.0'
+    dependencies:
+      '@sanity/block-content-to-hyperscript': 3.0.0
+      prop-types: 15.8.1
     dev: false
 
   /@sanity/block-content-to-react/3.0.0_react@18.2.0:

@@ -60,21 +60,24 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
 
   return (
     <div className={className}>
-      <h1 className="text-4xl">{product.name}</h1>
+      <h1 className="text-4xl font-bold">{product.name}</h1>
       <ProductOptions
         options={product.options}
         selectedOptions={selectedOptions}
         setSelectedOptions={setSelectedOptions}
       />
       <Text
-        className="pb-4 break-words w-full max-w-xl"
+        className="w-full max-w-xl pb-4 break-words"
         html={product.descriptionHtml || product.description}
       />
-      <div className="flex flex-row justify-between items-center">
+      <div className="flex flex-row items-center justify-between">
         <Rating value={4} />
-        <div className="text-accent-6 pr-1 font-medium text-sm">36 reviews</div>
+        <div className="pr-1 text-sm font-medium text-accent-6">36 reviews</div>
       </div>
-      <h1 className="text-4xl">{price}</h1>
+      <div className="flex items-baseline justify-between">
+        <h1 className="text-xl">Preis:</h1>
+        <h1 className="text-3xl font-bold">{price}</h1>
+      </div>
       <div>
         {error && <ErrorMessage error={error} className="my-5" />}
         {process.env.COMMERCE_CART_ENABLED && (
@@ -93,15 +96,8 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
         )}
       </div>
       <div className="mt-6">
-        <Collapse title="Care">
-          This is a limited edition production run. Printing starts when the
-          drop ends.
-        </Collapse>
-        <Collapse title="Details">
-          This is a limited edition production run. Printing starts when the
-          drop ends. Reminder: Bad Boys For Life. Shipping may take 10+ days due
-          to COVID-19.
-        </Collapse>
+        <Collapse title="Informationen">Produkt Informationen</Collapse>
+        <Collapse title="Details">Weitere Produkt Informationen</Collapse>
       </div>
     </div>
   )

@@ -2,7 +2,7 @@ import { groq } from 'next-sanity'
 import { client } from '@lib/sanity.client'
 import BlogList from '@components/blog/BlogList'
 import { useEffect, useState } from 'react'
-import { Head } from '@components/common'
+import { Head, Layout } from '@components/common'
 
 const query = groq`
 *[_type=='post']{
@@ -31,3 +31,5 @@ export default function Blog() {
     </>
   )
 }
+
+Blog.Layout = Layout

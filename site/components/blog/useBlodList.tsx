@@ -1,18 +1,19 @@
 import useSWR from 'swr'
+import groq from 'next-sanity'
 import { client as sanityClient } from '@lib/sanity.client'
 
 const fetcher = (query: string) => sanityClient.fetch(query)
 
-export const useAbout = () => {
-  const query = `*[_type == "about"]{
+export const useBlogList = () => {
+  const query = `*[_type == "post"]{
     _id,
     title,
-    "imageUrl": mainImage.asset->url,
-    body,
-    author-> { name, "imageUrl": image.asset->url }
+    "imageUrl": mainImage.asset->url
   }`
 
-  const { data, error } = useSWR(query, fetcher, { refreshInterval: 3000 })
+  const { data, error } = useSWR(query, fetcher)
+
+  const revalidate = 30
 
   return {
     data,

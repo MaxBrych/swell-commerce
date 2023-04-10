@@ -55,7 +55,7 @@
 
 .button {
   width: 100%;
-  @apply rounded-full h-14 bg-orange-500;
+  @apply rounded-full h-14 mt-4 bg-orange-500;
 }
 
 .wishlistButton {

@@ -79,7 +79,7 @@
 
 /* Variant Simple */
 .simple .header .name {
-  @apply pt-2 -mt-1 text-sm leading-10;
+  @apply pt-2 -mt-1 text-base font-bold leading-10;
 }
 .simple .header .description {
   @apply pt-2 -mt-1 text-sm leading-10;

@@ -85,6 +85,7 @@ export interface ProductVariant {
 }
 
 export interface Product {
+  metafields: any
   /**
    *  The unique identifier for the product.
    */

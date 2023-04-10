@@ -12,9 +12,21 @@ export default defineType({
     }),
 
     defineField({
-      name: 'link',
-      title: 'Link',
-      type: 'url',
+      name: 'description',
+      title: 'Beschreibung',
+      type: 'string',
+    }),
+
+    defineField({
+      name: 'price',
+      title: 'Preis',
+      type: 'string',
+    }),
+
+    defineField({
+      name: 'details',
+      title: 'Details',
+      type: 'blockContent',
     }),
 
     defineField({

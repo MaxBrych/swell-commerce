@@ -1,17 +1,17 @@
 .control {
-  @apply absolute bottom-32 right-4 pl-8 flex flex-row 
+  @apply absolute bottom-24 md:bottom-64 right-4 pl-8 flex flex-row 
   text-black z-30 w-full justify-between select-none;
 }
 
 .leftControl,
 .rightControl {
-  @apply cursor-pointer shadow-xl bg-white border w-8 h-8 flex justify-center items-center rounded-full border-gray-300;
+  @apply cursor-pointer bg-white border w-8 h-8 flex justify-center items-center rounded-full border-gray-300;
   transition: background-color 0.2s ease;
 }
 
 .leftControl:hover,
 .rightControl:hover {
-  background-color: var(--violet-dark);
+  background-color: var(--accent-0);
 }
 
 .leftControl:focus,
@@ -20,7 +20,7 @@
 }
 
 .rightControl {
-  @apply border-l border-accent-0;
+  @apply border-l;
 }
 
 .leftControl {

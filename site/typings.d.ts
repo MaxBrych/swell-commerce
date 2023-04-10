@@ -89,3 +89,21 @@ interface StoreTitle {
   _type: 'string'
   asset: string
 }
+
+declare module '@sanity/block-content-to-react' {
+  import * as React from 'react'
+
+  interface BlockContentProps {
+    blocks: any
+    className?: string
+    serializers?: any
+    projectId?: string
+    dataset?: string
+    imageOptions?: any
+  }
+
+  export default class BlockContent extends React.Component<
+    BlockContentProps,
+    any
+  > {}
+}

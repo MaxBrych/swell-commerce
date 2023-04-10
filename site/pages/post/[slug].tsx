@@ -2,10 +2,12 @@ import { groq } from 'next-sanity'
 import { client } from '../../lib/sanity.client'
 import Image from 'next/image'
 import urlFor from '../../lib/urlFor'
-import { PortableText } from '@portabletext/react'
+import BlockContent from '@sanity/block-content-to-react'
 import { RichTextComponents } from '../../components/blog/RichTextComponents'
 import Link from 'next/link'
+
 import { MdArrowBackIosNew } from 'react-icons/md'
+import { Layout } from '@components/common'
 
 type Props = {
   post: Post
@@ -53,15 +55,15 @@ export default function Post({ post }: Props) {
             <div>{/* TODO: CATEGORIES */}</div>
           </div>
           <div className="py-6 text-lg sm:text-2xl">
-            <PortableText value={post.body} components={RichTextComponents} />
+            <BlockContent blocks={post.body} />
           </div>
         </div>
         <div className="absolute right-6 top-24">
           <h1 className="invisible md:visible">Sidebar</h1>
         </div>
-        <div className="absolute invisible left-4 top-20 sm:left-6 sm:top-24 md:visible">
+        <div className="absolute invisible left-4 top-20 sm:left-6 sm:top-40 md:visible">
           <Link href="/blog">
-            <MdArrowBackIosNew className="w-12 h-12 p-3 border border-gray-400 rounded-full hover:bg-gray-100" />
+            <MdArrowBackIosNew className="w-12 h-12 p-3 bg-white border border-gray-400 rounded-full hover:bg-gray-100" />
           </Link>
         </div>
       </div>
@@ -86,3 +88,5 @@ export async function getServerSideProps({ params: { slug } }: Props) {
     },
   }
 }
+
+Post.Layout = Layout

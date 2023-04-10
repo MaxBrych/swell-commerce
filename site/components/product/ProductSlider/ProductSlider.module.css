@@ -14,7 +14,7 @@
 
 .thumb {
   @apply overflow-hidden inline-block cursor-pointer h-full;
-  width: 125px;
+  width: 36px;
   width: calc(100% / 3);
 }
 
@@ -48,9 +48,9 @@
     @apply scale-110;
   }
   .album {
-    height: 182px;
+    height: 48px;
   }
   .thumb {
-    width: 235px;
+    width: 48px;
   }
 }

@@ -4,17 +4,23 @@ import urlFor from '../../lib/urlFor'
 
 export const RichTextComponents = {
   types: {
-    image: ({ value }: any) => {
+    image: ({ node }: any) => {
+      if (!node) return null
+
+      const imageURL = urlFor(node).url()
+
       return (
-        <div className="w-full m-10 mx-auto realtive h-96">
-          <Image
-            className="object-contain"
-            src={urlFor(value).url()}
-            alt="Blog Post Image"
-            width={324}
-            height={200}
-          />
-        </div>
+        imageURL && (
+          <div className="w-full m-10 mx-auto realtive h-96">
+            <Image
+              className="object-contain"
+              src={imageURL}
+              alt="Blog Post Image"
+              width={324}
+              height={200}
+            />
+          </div>
+        )
       )
     },
   },

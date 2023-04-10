@@ -24,7 +24,7 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
 
   return (
     <>
-      <Container className="w-full max-w-none" clean>
+      <Container className="w-full max-w-none font-sk-modernist" clean>
         <div className={cn(s.root, 'fit')}>
           <div className={cn(s.main, 'fit')}>
             {/* <ProductTag
@@ -40,10 +40,10 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
                       className={s.img}
                       src={image.url!}
                       alt={image.alt || 'Product Image'}
-                      width={600}
+                      width={800}
                       height={600}
                       priority={i === 0}
-                      quality="85"
+                      quality="100"
                     />
                   </div>
                 ))}
@@ -74,16 +74,15 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
                 className="flex-shrink-0 w-[75vw] md:flex-1 md:w-full md:overflow-hidden"
               >
                 <ProductCard
-                  noNameTag
                   product={p}
                   key={p.path}
                   variant="simple"
                   className="animated fadeIn"
                   imgProps={{
-                    width: 600,
-                    height: 600,
+                    width: 400,
+                    height: 400,
                     alt: p.name,
-                    className: 'w-full h-full object-cover',
+                    className: 'w-full h-full object-cover object-center',
                   }}
                 />
               </div>

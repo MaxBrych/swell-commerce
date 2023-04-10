@@ -11,12 +11,13 @@ import { useEffect, useState } from 'react'
 import Categories from '@components/categorie/categoryList'
 import Link from 'next/link'
 import Image from 'next/image'
-import Vertragspartner from '@components/Vertragspartner/Vertragspartner'
-import Dienstleistungen from '@components/dienstleistungen/Dienstleistungen'
+import Vertragspartner from '@components/sections/Vertragspartner/Vertragspartner'
 import ProductList from '@components/product/ProductList/ProductList'
-import Kunden from '@components/kunden/Kunden'
+import Kunden from '@components/sections/kunden/Kunden'
 import CategoryGrid from '@components/categorie/categoryGrid'
-import Karte from '@components/maps/Karte'
+import Karte from '@components/sections/maps/Karte'
+import Values from '@components/sections/values/Values'
+import ServiceGrid from '@components/services/ServiceGrid'
 export async function getStaticProps({
   preview,
   locale,
@@ -89,28 +90,37 @@ export default function Home({
 
   return (
     <>
-      <div className="font-sk-modernist font-normal">
-        <div className="">
-          <div className="h-[75vh] bg-[url('https://cdn.discordapp.com/attachments/1084536803157090514/1084563027917033522/Stage_Bledner.png')]  bg-no-repeat bg-cover bg-center ">
-            <div className="flex flex-col items-center justify-center h-full gap-5">
-              <h1 className="text-4xl font-bold text-center text-black md:text-5xl">
-                Hier findest du <br /> was du suchst
-              </h1>
-              <Link
-                href="/search"
-                className="flex items-center justify-center h-12 p-8 bg-orange-500 rounded-full"
-              >
+      <div className="font-normal font-sk-modernist">
+        <div className="h-[66vh] bg-[#FFF1D6] relative flex flex-col md:flex-row bg-no-repeat bg-cover bg-center ">
+          <div className="right-0 w-full h-56 md:absolute">
+            <Image
+              className="right-0 object-fill w-full md:h-full md:absolute"
+              src={''}
+              alt={'alt'}
+              width={100}
+              height={100}
+            />
+          </div>
+          <div className="flex flex-col justify-center w-full gap-4 pl-4 md:left-0 md:absolute md:top-1/4 items-left">
+            <h1 className="text-4xl font-bold text-left text-black md:text-5xl">
+              Hier findest du <br /> was du suchst
+            </h1>
+            <p className="text-lg text-left text-gray-700 md:text-xl">
+              Hier steht eine Beschreibung zum Shop und den Produkten
+            </p>
+            <Link href="/search">
+              <span className="inline-flex items-center justify-center h-12 px-6 py-2 text-white bg-[#FF9900] rounded-full cursor-pointer">
                 Zum Shop
-              </Link>
-            </div>
+              </span>
+            </Link>
           </div>
         </div>
         <CategoryGrid categories={categories} />
 
         <ProductList products={products} />
-
+        <ServiceGrid />
         <Vertragspartner />
-        <Dienstleistungen />
+        <Values />
         <Hero
           headline="Wir kümmern uns um ihre Technik"
           description="Im Müritzphone Shop Röbel, finden Sie alles was Sie für Ihr Smartphone, Tablet oder Notebook benötigen. Wir bieten Ihnen eine große Auswahl an Zubehör, Ersatzteilen und Reparaturen."

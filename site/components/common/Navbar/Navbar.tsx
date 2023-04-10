@@ -62,7 +62,7 @@ export default function Navbar({
         <div className={s.nav}>
           <div className="flex items-center flex-1">
             <nav className={s.navMenu}>
-              <Link href="/search" className={s.link}>
+              <Link href="/service" className={s.link}>
                 Dienstleistungen
               </Link>
               <Link href="/blog" className={s.link}>
@@ -72,7 +72,6 @@ export default function Navbar({
                 Über Uns
               </Link>
               <Link
-                onMouseOver={toggleIsOpen}
                 onMouseLeave={toggleIsClose}
                 href="/search"
                 className={s.link}

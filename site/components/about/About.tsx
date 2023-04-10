@@ -1,3 +1,4 @@
+import Values from '@components/sections/values/Values'
 import { useAbout } from './useAbout'
 import Image from 'next/image'
 
@@ -13,7 +14,7 @@ const About = () => {
   }
 
   return (
-    <div>
+    <div className="md:px-8 lg:px-16 md:py-16">
       {data.map(
         (item: {
           description: string
@@ -24,7 +25,7 @@ const About = () => {
           author: { name: string; imageUrl: string }
         }) => (
           <div key={item._id} className="">
-            <div className="w-full h-64 md:h-96">
+            {/*<div className="w-full h-64 md:h-96">
               <Image
                 src={item.imageUrl}
                 alt={item.title}
@@ -32,7 +33,7 @@ const About = () => {
                 width={640}
                 height={320}
               />
-            </div>
+        </div>*/}
             <div className="text-center">
               <h1 className="text-2xl font-bold">{item.title}</h1>
             </div>
@@ -49,6 +50,7 @@ const About = () => {
               </div>
               <div className="text-xl font-semibold">{item.author.name}</div>
             </div>
+            <Values />
           </div>
         )
       )}
