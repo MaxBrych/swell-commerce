@@ -25,7 +25,7 @@ export default function BlogList() {
         {/* Posts */}
         {data.map((post: any) => (
           <ClientSideRoute key={post._id} route={`/post/${post.slug.current}`}>
-            <div className="flex flex-col cursor-pointer group">
+            <div className="flex flex-col cursor-pointer group ">
               <div className="relative w-full h-40 md:h-56">
                 <Image
                   className="object-cover object-left rounded-xl"

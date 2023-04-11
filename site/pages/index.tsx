@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react'
 import Categories from '@components/categorie/categoryList'
 import Link from 'next/link'
 import Image from 'next/image'
-import Vertragspartner from '@components/sections/Vertragspartner/Vertragspartner'
+import Vertragspartner from '@components/sections/partner/Vertragspartner'
 import ProductList from '@components/product/ProductList/ProductList'
 import Kunden from '@components/sections/kunden/Kunden'
 import CategoryGrid from '@components/categorie/categoryGrid'
@@ -90,7 +90,7 @@ export default function Home({
 
   return (
     <>
-      <div className="font-normal font-sk-modernist">
+      <div className="max-w-[1600px]">
         <div className="h-[66vh] bg-[#FFF1D6] relative flex flex-col md:flex-row bg-no-repeat bg-cover bg-center ">
           <div className="right-0 w-full h-56 md:absolute">
             <Image

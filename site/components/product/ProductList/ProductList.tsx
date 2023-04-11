@@ -13,15 +13,16 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => (
       Beliebte Produkte{' '}
       <Link
         href="/search"
-        className="flex items-center justify-center px-5 text-sm rounded-full h-9 bg-gray-300"
+        className="flex items-center justify-center px-5 text-sm bg-gray-300 rounded-full h-9"
       >
         Alle Produkte
       </Link>
     </div>
-    <div className="flex w-full gap-4 overflow-x-scroll md:grid md:overflow-hidden md:grid-cols-4 ">
+    <div className="flex w-full gap-4 py-4 overflow-x-scroll md:grid md:overflow-hidden md:grid-cols-4">
       {products.slice(0, 4).map((product: any, i: number) => (
         <ProductCard
-          className="product-list-card flex-shrink-0 w-[75vw] md:w-[33vw] lg:w-full md:flex-1"
+          className="product-list-card flex-shrink-0 w-[75vw] md:w-[33vw] lg:w-full md:flex-1 p-2 transition-all 
+          duration-200 border rounded-lg md:rounded-xl border-gray-300 hover:shadow-lg hover:shadow-gray-100"
           variant="simple"
           key={product.id}
           product={product}

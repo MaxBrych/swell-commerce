@@ -37,7 +37,7 @@ const ServiceGrid = () => {
         {data.map((item: ServiceGridProps) => (
           <div
             key={item._id}
-            className="flex w-[75vw] md:w-full  p-4 border border-gray-300 md:block rounded-xl"
+            className="flex w-[75vw] md:w-full p-2 items-center gap-3 md:p-4 border border-gray-300 md:block rounded-xl"
           >
             <div className="inline-flex flex-shrink-0 p-4 mb-3 bg-gray-100 rounded-full">
               <Image
@@ -47,7 +47,7 @@ const ServiceGrid = () => {
                 height={24}
               />
             </div>
-            <h1 className="text-2xl font-bold">{item.title}</h1>
+            <h1 className="text-lg font-bold md:text-2xl">{item.title}</h1>
             <div className="hidden md:block">{item.description}</div>
           </div>
         ))}

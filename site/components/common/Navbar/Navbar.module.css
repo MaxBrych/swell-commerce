@@ -1,5 +1,5 @@
 .root {
-  @apply bg-white  border border-b-slate-200 z-40 h-32 transition-all duration-150;
+  @apply bg-white w-full max-w-[1600px] border border-b-slate-200 z-40 h-32 transition-all duration-150;
   min-height: 72px;
 }
 

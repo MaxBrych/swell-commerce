@@ -16,11 +16,11 @@ const Values: FC<Props> = () => {
         <h1 className="mb-4 text-4xl font-bold text-left md:text-center md:text-4xl">
           Unsere Werte
         </h1>
-        <div className="flex w-full gap-6 overflow-x-auto md:grid md:grid-cols-3 h-[50vh]">
+        <div className="flex w-full gap-6 overflow-x-auto md:grid md:grid-cols-3 h-[33vh]">
           {valueData.map((item: ValueProps) => (
             <div
               key={item.id}
-              className="w-[75vw]  md:w-auto border border-gray-300 rounded-2xl p-4 flex flex-col justify-center h-full"
+              className="w-[75vw]  md:w-auto flex flex-col justify-center h-full"
             >
               <div className="flex items-center justify-center my-8">
                 <Image

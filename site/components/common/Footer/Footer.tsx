@@ -74,10 +74,10 @@ const Footer: FC<Props> = ({ className, pages }) => {
         </div>
         <div className="flex flex-col items-center justify-between pt-6 pb-10 space-y-4 text-sm md:flex-row text-accent-6">
           <div>
-            <span>&copy; 2020 ACME, Inc. All rights reserved.</span>
+            <span>&copy; 2023 Müritzphone. Alle Rechte vorbehalten.</span>
           </div>
           <div className="flex items-center text-sm text-primary">
-            <span className="text-primary">Created by</span>
+            <span className="text-primary">Erstellt von</span>
             <a
               rel="noopener noreferrer"
               href="https://vercel.com"

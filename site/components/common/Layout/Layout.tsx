@@ -19,7 +19,7 @@ import type { Category } from '@commerce/types/site'
 import type { Link as LinkProps } from '../UserNav/MenuSidebarView'
 
 const Loading = () => (
-  <div className="w-80 h-80 flex items-center text-center justify-center p-3">
+  <div className="flex items-center justify-center p-3 text-center w-80 h-80">
     <LoadingDots />
   </div>
 )
@@ -125,11 +125,11 @@ const Layout: React.FC<Props> = ({
           <SidebarUI links={navBarlinks} />
         </CheckoutProvider>
         <FeatureBar
-          title="This site uses cookies to improve your experience. By clicking, you agree to our Privacy Policy."
+          title="Diese Website verwendet Cookies, um Ihr Erlebnis zu verbessern. Durch Anklicken stimmen Sie unserer Datenschutzrichtlinie zu."
           hide={acceptedCookies}
           action={
             <Button className="mx-5" onClick={() => onAcceptCookies()}>
-              Accept cookies
+              Cookies Akzeptieren
             </Button>
           }
         />
