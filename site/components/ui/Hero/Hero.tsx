@@ -19,7 +19,7 @@ const Hero: FC<HeroProps> = ({ headline, description }) => {
             <p>{description}</p>
             <Link
               href="/about"
-              className="flex items-center px-4 pt-3 font-bold cursor-pointer text-accent-0 hover:underline w-max-content"
+              className="flex items-center  pt-3 font-bold cursor-pointer text-accent-0 hover:underline w-max-content"
             >
               Über Uns
               <ArrowRight width="20" heigh="20" className="ml-1" />
