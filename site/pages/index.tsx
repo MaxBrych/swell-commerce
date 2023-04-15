@@ -94,11 +94,12 @@ export default function Home({
         <div className="h-[66vh] bg-[#FFF1D6] relative flex flex-col md:flex-row bg-no-repeat bg-cover bg-center ">
           <div className="right-0 w-full h-56 md:absolute">
             <Image
-              className="right-0 object-fill w-full md:h-full md:absolute"
+              className="right-0 object-fill w-full md:w-[50vw] md:h-[50vh] md:absolute"
               src={''}
+              quality={100}
               alt={'alt'}
-              width={100}
-              height={100}
+              width={1000}
+              height={1000}
             />
           </div>
           <div className="flex flex-col justify-center w-full gap-4 pl-4 md:left-0 md:absolute md:top-1/4 items-left">

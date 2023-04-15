@@ -13,7 +13,7 @@ const Values: FC<Props> = () => {
   return (
     <div className="px-4 md:px-8 lg:px-16 ">
       <div className="py-12 md:py-16">
-        <h1 className="mb-4 text-3xl font-bold text-center md:text-4xl">
+        <h1 className="text-3xl font-bold text-center md:mb-4 md:text-4xl">
           Unsere Werte
         </h1>
         <div className="flex w-full gap-6 overflow-x-auto md:grid md:grid-cols-3 ">

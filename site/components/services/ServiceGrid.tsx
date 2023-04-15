@@ -28,16 +28,16 @@ const ServiceGrid = () => {
         <h1 className="text-2xl font-bold ">Dienstleistungen</h1>
         <Link
           href="/service"
-          className="flex items-center justify-center h-10 px-6 text-white bg-orange-500 rounded-full curser-pointer"
+          className="flex items-center justify-center h-9 text-sm md:h-10 px-6 text-white bg-[#ddd] rounded-full curser-pointer"
         >
-          Alle Services
+          Alle Anzeigen
         </Link>
       </div>
-      <div className="flex flex-1 gap-6 overflow-x-auto md:overflow-hidden md:grid md:grid-cols-3">
+      <div className="flex gap-6 overflow-x-auto md:overflow-hidden md:grid md:grid-cols-3">
         {data.map((item: ServiceGridProps) => (
           <div
             key={item._id}
-            className="flex w-[90vw] md:w-full p-2 items-center gap-3 md:p-4 border border-gray-300 md:block rounded-xl"
+            className="flex flex-col w-[90vw] md:w-full p-2 items-start md:p-4 border border-gray-300 rounded-lg md:rounded-xl"
           >
             <div className="inline-flex flex-shrink-0 p-4 mb-3 bg-gray-100 rounded-full">
               <Image
@@ -48,7 +48,7 @@ const ServiceGrid = () => {
               />
             </div>
             <h1 className="text-lg font-bold md:text-2xl">{item.title}</h1>
-            <div className="hidden md:block">{item.description}</div>
+            <div className="">{item.description}</div>
           </div>
         ))}
       </div>
