@@ -18,7 +18,7 @@ const ValueData = [
     label: 'Vertrauen',
     descr: 'Wir reparieren Ihr Gerät schnell und zuverlässig',
     image:
-      'https://cdn.discordapp.com/attachments/911669935363752026/1094518430419386479/Frame_26.png',
+      'https://cdn.discordapp.com/attachments/911669935363752026/1094518430171942982/Frame_28.png',
   },
 ]
 

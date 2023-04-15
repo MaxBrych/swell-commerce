@@ -15,7 +15,7 @@ const Service = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-center w-full h-48 mb-8 text-2xl bg-gray-300 text-bold">
+      <div className="flex items-center justify-center w-full h-48 mb-8 text-3xl bg-gray-300 md:text-4xl text-bold">
         Dienstleistungen
       </div>
       <div className="grid grid-cols-1 gap-6 px-4 py-6 md:grid-cols-3 md:px-8 lg:px-16 md:py-16">

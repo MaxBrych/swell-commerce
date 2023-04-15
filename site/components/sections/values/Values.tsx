@@ -13,14 +13,14 @@ const Values: FC<Props> = () => {
   return (
     <div className="px-4 md:px-8 lg:px-16 ">
       <div className="py-12 md:py-16">
-        <h1 className="mb-4 text-4xl font-bold text-left md:text-center md:text-4xl">
+        <h1 className="mb-4 text-3xl font-bold text-center md:text-4xl">
           Unsere Werte
         </h1>
-        <div className="flex w-full gap-6 overflow-x-auto md:grid md:grid-cols-3 h-[33vh]">
+        <div className="flex w-full gap-6 overflow-x-auto md:grid md:grid-cols-3 ">
           {valueData.map((item: ValueProps) => (
             <div
               key={item.id}
-              className="w-[75vw]  md:w-auto flex flex-col justify-center h-full"
+              className="w-[90vw] flex-1 flex-shrink-0  md:w-auto flex flex-col justify-center h-full"
             >
               <div className="flex items-center justify-center my-8">
                 <Image

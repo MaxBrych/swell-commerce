@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Karte() {
   return (
-    <div className="px-4 md:px-8 lg:px-16 py-6 md:py-16">
-      <h1 className="py-6 text-3xl font-semibold text-center">
+    <div className="px-4 py-6 md:px-8 lg:px-16 md:py-16">
+      <h1 className="py-6 text-3xl font-semibold text-center md:text-4xl">
         Lass dich Vorort beraten
       </h1>
       <iframe
