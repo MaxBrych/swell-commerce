@@ -34,7 +34,7 @@ const Values: FC<Props> = () => {
                 <h1 className="text-2xl font-bold text-center md:text-4xl">
                   {item.label}
                 </h1>
-                <p className="text-center">{item.descr}</p>
+                <p className="text-xs text-center md:text-lg">{item.descr}</p>
               </div>
             </div>
           ))}

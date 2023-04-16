@@ -28,7 +28,7 @@ const ServiceGrid = () => {
         <h1 className="text-2xl font-bold ">Dienstleistungen</h1>
         <Link
           href="/service"
-          className="flex items-center justify-center h-9 text-sm md:h-10 px-6 text-white bg-[#ddd] rounded-full curser-pointer"
+          className="flex items-center justify-center h-9 text-sm md:h-10 px-6 text-white bg-[#ff9900] rounded-full curser-pointer"
         >
           Alle Anzeigen
         </Link>

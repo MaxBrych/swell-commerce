@@ -293,7 +293,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                       hidden: !data.found,
                     })}
                   >
-                    Showing {data.products.length} results{' '}
+                    Es wurden {data.products.length} gefunden{' '}
                     {q && (
                       <>
                         for "<strong>{q}</strong>"
@@ -308,21 +308,20 @@ export default function Search({ categories, brands }: SearchPropsType) {
                   >
                     {q ? (
                       <>
-                        There are no products that match "<strong>{q}</strong>"
+                        Dieses Produkt konnte nicht gefunden werden "
+                        <strong>{q}</strong>"
                       </>
                     ) : (
-                      <>
-                        There are no products that match the selected category.
-                      </>
+                      <>Es gibt keine Produkte unter dieser Kategorie.</>
                     )}
                   </span>
                 </>
               ) : q ? (
                 <>
-                  Searching for: "<strong>{q}</strong>"
+                  Suchen nach: "<strong>{q}</strong>"
                 </>
               ) : (
-                <>Searching...</>
+                <>Suche...</>
               )}
             </div>
           )}
@@ -412,7 +411,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                             'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4'
                           }
                         >
-                          Relevanz
+                          Filter
                         </a>
                       </Link>
                     </li>
