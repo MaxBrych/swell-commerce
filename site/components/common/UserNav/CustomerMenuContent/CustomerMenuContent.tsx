@@ -11,15 +11,15 @@ import {
 
 const LINKS = [
   {
-    name: 'My Orders',
+    name: 'Meine Bestellungen',
     href: '/orders',
   },
   {
-    name: 'My Profile',
+    name: 'Mein Profil',
     href: '/profile',
   },
   {
-    name: 'My Cart',
+    name: 'Mein Warenkorb',
     href: '/cart',
   },
 ]
