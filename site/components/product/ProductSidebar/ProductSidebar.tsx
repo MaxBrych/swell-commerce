@@ -96,7 +96,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
         )}
       </div>
       <div className="mt-6">
-        <Collapse title="Informationen">Produkt Informationen</Collapse>
+        <Collapse title="Informationen">Produkt Informationen </Collapse>
         <Collapse title="Details">Weitere Produkt Informationen</Collapse>
       </div>
     </div>

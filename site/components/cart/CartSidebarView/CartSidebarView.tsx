@@ -57,8 +57,8 @@ const CartSidebarView: FC = () => {
             <Cross width={24} height={24} />
           </span>
           <h2 className="pt-6 text-xl font-light text-center">
-            We couldn’t process the purchase. Please check your card information
-            and try again.
+            Wir konnten den Kauf nicht bearbeiten. Bitte überprüfen Sie Ihre
+            Kartendaten und versuchen Sie es erneut.
           </h2>
         </div>
       ) : success ? (
@@ -67,7 +67,7 @@ const CartSidebarView: FC = () => {
             <Check />
           </span>
           <h2 className="pt-6 text-xl font-light text-center">
-            Thank you for your order.
+            Danke für deine Bestellung!
           </h2>
         </div>
       ) : (
@@ -92,20 +92,20 @@ const CartSidebarView: FC = () => {
           <div className="sticky bottom-0 left-0 right-0 z-20 flex-shrink-0 w-full px-6 py-6 text-sm border-t sm:px-6 bg-accent-0">
             <ul className="pb-2">
               <li className="flex justify-between py-1">
-                <span>Subtotal</span>
+                <span>Zwischensumme</span>
                 <span>{subTotal}</span>
               </li>
               <li className="flex justify-between py-1">
-                <span>Taxes</span>
-                <span>Calculated at checkout</span>
+                <span>Steuern</span>
+                <span>Wird an der Kasse berechnet</span>
               </li>
               <li className="flex justify-between py-1">
-                <span>Shipping</span>
-                <span className="font-bold tracking-wide">FREE</span>
+                <span>Versand</span>
+                <span className="font-bold tracking-wide">KOSTENLOS</span>
               </li>
             </ul>
             <div className="flex justify-between py-3 mb-2 font-bold border-t border-accent-2">
-              <span>Total</span>
+              <span>Gesamt</span>
               <span>{total}</span>
             </div>
             <div>
